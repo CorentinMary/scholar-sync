@@ -1,0 +1,5 @@
+*.ipynb
+__pycache__
+.pytest_cache
+data/*.txt
+data/*.pdf
