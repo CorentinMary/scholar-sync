@@ -1,1 +1,11 @@
-bucket: llm-technical-test-data
+n_sim_docs: 3
+
+max_summary_tokens: 100
+
+retriever_name: similarity
+
+summarizer_name: prompt
+
+bucket_name: llm-technical-test-data
+
+local_docs_path: ./data
