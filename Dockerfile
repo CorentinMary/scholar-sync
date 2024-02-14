@@ -1,12 +1,15 @@
 FROM python:slim
 
+# to avoid installation error with chroma-hnswlib
 RUN apt-get update --fix-missing && apt-get install -y --fix-missing build-essential
 
-COPY . /app/
+COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
 RUN python -m pip install -r requirements.txt
+
+COPY . /app/
 
 EXPOSE 8501
 
