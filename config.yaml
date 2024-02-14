@@ -1,6 +1,6 @@
 n_sim_docs: 3
 
-max_summary_tokens: 100
+max_summary_tokens: 200
 
 retriever_name: similarity
 

@@ -9,11 +9,11 @@ Summarize the following chunks of text:
 Helpful answer:
 """
 
-REDUCE_PROMPT = """The following is set of summaries:
+REDUCE_PROMPT = """The following is a set of summaries:
 
 {docs}
 
-Take these and distill it into a final, consolidated summary of the main themes.
-Your answer should be in less than {max_summary_tokens} words.
+Take these and distill it into a final, consolidated summary of the main themes, in less than {max_summary_tokens}
+ tokens.
 Helpful Answer:
 """
