@@ -101,7 +101,9 @@ class PromptSummarizer(Summarizer):
         # build the MapReduce chain
         self.map_prompt = PromptTemplate.from_template(map_prompt)
         map_chain = LLMChain(llm=self.llm, prompt=self.map_prompt)
-        self.reduce_prompt = PromptTemplate.from_template(reduce_prompt)
+        self.reduce_prompt = PromptTemplate.from_template(
+            reduce_prompt.replace("{max_summary_tokens}", str(int(0.75 * self.max_summary_tokens)))
+        )
         reduce_chain = LLMChain(llm=self.llm, prompt=self.reduce_prompt)
         combine_documents_chain = StuffDocumentsChain(llm_chain=reduce_chain, document_variable_name="docs")
         reduce_documents_chain = ReduceDocumentsChain(

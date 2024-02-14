@@ -27,7 +27,7 @@ def test_inference(temp_folder):
         pipeline = InferencePipeline(
             document_folder=temp_folder, retriever_name=retriever_name, summarizer_name=summarizer_name
         )
-        input_text = "Sample input text."
+        input_text = "Some input text about vaccines."
         output = pipeline.predict(input_text=input_text, n_sim_docs=2)
         assert len(output) == 2
         assert all(set(doc.keys()) == set(["title", "similarity", "summary"]) for doc in output)

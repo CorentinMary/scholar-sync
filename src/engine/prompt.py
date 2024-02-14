@@ -14,5 +14,6 @@ REDUCE_PROMPT = """The following is set of summaries:
 {docs}
 
 Take these and distill it into a final, consolidated summary of the main themes.
+Your answer should be in less than {max_summary_tokens} words.
 Helpful Answer:
 """
